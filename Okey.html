@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OKEY Card Selection</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="icon" type="image/x-icon" href="assets/okey.ico">
+  <title>OKEY Helper</title>
   <style>
     body {
       display: flex;
@@ -12,7 +14,8 @@
       justify-content: center;
       height: 100vh;
       margin: 0;
-      background-color: #f0f0f0; /* Light background color */
+	  background: url('assets/okey-bg.jpg');
+	  background-size: cover;
     }
 
     .card-container {
@@ -65,7 +68,7 @@
       background-color: #e74c3c; /* Red color for reset button */
       color: white;
       border: none;
-      padding: 10px 20px;
+      padding: 15px 30px;
       border-radius: 5px;
       cursor: pointer;
       transition: background-color 0.3s;
@@ -78,12 +81,17 @@
     .mt-7 {
       margin-top: 7px;
     }
+	
+	.mt-15 {
+      margin-top: 15px;
+    }
 
     .select-column-button {
       margin-top: 10px;
       background-color: #3498db; /* Blue color for column selection button */
       color: white;
-      border: none;
+	  border: 1px ;
+ 
       padding: 10px 15px;
       border-radius: 5px;
       cursor: pointer;
@@ -107,7 +115,32 @@
 	
 	.mr-5 {
       margin-right: 45px;
-	  }
+	}
+	
+	.footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 10px;
+      background-color: #333;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-family: 'Arial', sans-serif;
+    }
+
+    .footer-text {
+      margin-right: 10px;
+    }
+
+    .discord-icon {
+      color: #7289da;
+      cursor: pointer;
+      font-size: 24px;
+    }
   </style>
 </head>
 <body>
@@ -160,7 +193,13 @@
     <div class="card" id="blue8" oncontextmenu="handleRightClick(event, 'blue8')">8</div>
   </div>
 
-  <button class="reset-button mt-7" onclick="resetCards()">Reset Cards</button>
+  <button class="reset-button mt-15" onclick="resetCards()">Reset Cards</button>
+  
+  <!-- Footer -->
+  <div class="footer">
+    <span class="footer-text">Powered by Metin2 AE Community</span>
+    <i class="fab fa-discord discord-icon" onclick="redirectToDiscord()"></i>
+  </div>
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -213,6 +252,10 @@
     });
   });
 }
+function redirectToDiscord() {
+      // Replace 'YOUR_DISCORD_INVITE_LINK' with the actual Discord invite link
+      window.location.href = 'https://discord.gg/pDeSbHm';
+    }
   </script>
 
 </body>
